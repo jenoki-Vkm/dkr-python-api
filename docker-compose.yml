@@ -1,0 +1,21 @@
+services:
+  client-api:
+    build: .
+    container_name: clientAPI-server
+    command: uvicorn app.main:app --host 0.0.0.0 --port 80 --reload
+    ports:
+      - 81:80
+      - 5679:5678
+    volumes:
+      - .:/jenoki-workspace
+      - ./logs:/jenoki-workspace/logs
+      - ./data:/jenoki-workspace/data
+    restart: unless-stopped
+    environment:
+      - USER:jenoki
+    networks:
+      - mycomnet
+    
+networks:
+  mycomnet:
+    external: true
