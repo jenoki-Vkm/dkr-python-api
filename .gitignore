@@ -1,0 +1,38 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# VSCode
+.vscode/
+
+# Environment variables
+.env
+*.env
+.env.*
+
+# Logs
+logs/
+*.log
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+
+# Coverage
+htmlcov/
+.coverage
