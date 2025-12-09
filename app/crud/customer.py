@@ -8,8 +8,6 @@ from app.models.customer import Customer as CustomerModel
 from app.schemas.customer import CustomerCreate, CustomerUpdate, CustomerChangePwd
 from app.core.security import verify_password, hash_password
 
-
-
 def get_customer(db: Session, customer_id: int) -> Optional[CustomerModel]:
     return db.query(CustomerModel).filter(CustomerModel.id == customer_id).first()
 

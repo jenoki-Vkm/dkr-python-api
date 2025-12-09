@@ -103,11 +103,7 @@ def update_customer(customer_id: int, customer_in: CustomerUpdate, db: Session =
         
 # Change password endpoint
 @router.post("/{customer_id}/change-password", status_code=status.HTTP_204_NO_CONTENT)
-def change_customer_password(
-    customer_id: int,
-    password_data: CustomerChangePwd,
-    db: Session = Depends(get_db),
-):
+def change_customer_password(customer_id: int,password_data: CustomerChangePwd,db: Session = Depends(get_db)) -> None:
     """
     Change le mot de passe si l'ancien mot de passe est correct.
     """
